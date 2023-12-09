@@ -35,23 +35,23 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
 
-    ## create application-dev.properties
-    - name: make application-dev.properties
-      if: contains(github.ref, 'develop')
-      run: |
-        cd ./src/main/resources
-        touch ./application-dev.properties
-        echo "${{ secrets.PROPERTIES_DEV }}" > ./application-dev.properties
-      shell: bash
+    # ## create application-dev.properties
+    # - name: make application-dev.properties
+    #   if: contains(github.ref, 'develop')
+    #   run: |
+    #     cd ./src/main/resources
+    #     touch ./application-dev.properties
+    #     echo "${{ secrets.PROPERTIES_DEV }}" > ./application-dev.properties
+    #   shell: bash
 
-    ## create application-prod.properties
-    - name: make application-prod.properties
-      if: contains(github.ref, 'main')
-      run: |
-          cd ./src/main/resources
-          touch ./application-prod.properties
-          echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
-      shell: bash
+    # ## create application-prod.properties
+    # - name: make application-prod.properties
+    #   if: contains(github.ref, 'main')
+    #   run: |
+    #       cd ./src/main/resources
+    #       touch ./application-prod.properties
+    #       echo "${{ secrets.PROPERTIES_PROD }}" > ./application-prod.properties
+    #   shell: bash
 
     ## create firebase-key.json
     - name: create firebase key
