@@ -1,6 +1,6 @@
 FROM openjdk:17-alpine
 
-ARG JAR_FILE=/build/libs/sejongmate-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=/build/libs/practice_compiler-0.0.1-SNAPSHOT.jar
 
 COPY ${JAR_FILE} /sejongmate.jar
 
